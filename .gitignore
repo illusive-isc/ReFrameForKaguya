@@ -1,0 +1,3 @@
+# Unity generates these next to assets; keep them, ignore only OS noise
+.DS_Store
+Thumbs.db

@@ -1,0 +1,67 @@
+
+:root {
+
+    --reframe-color-text-dim: rgba(230, 222, 218, 0.85);
+
+    --reframe-color-taupe: rgb(154, 137, 130);
+
+    --reframe-color-bundle-accent: rgb(196, 138, 134);
+    --reframe-color-bundle-bg: rgba(196, 138, 134, 0.16);
+
+    --reframe-color-blendtree: rgba(154, 137, 130, 0.36);
+
+    --reframe-color-forcedelete: rgba(150, 40, 40, 0.60);
+    --reframe-color-requires: rgba(222, 186, 110, 0.40);
+
+    --reframe-color-row-bg: rgba(214, 158, 154, 0.30);
+    --reframe-color-row-bg-hover: rgba(224, 172, 168, 0.45);
+
+    --reframe-color-bar-fixed: rgb(110, 98, 94);
+    --reframe-color-bar-used: rgb(196, 138, 134);
+
+    --reframe-color-bar-cut: rgb(222, 186, 110);
+    --reframe-color-bar-free: rgba(38, 34, 32, 0.7);
+
+    --reframe-color-row-bg-menu-deleted: rgba(118, 76, 73, 0.65);
+    --reframe-color-row-bg-gimmick-deleted: rgba(66, 40, 38, 0.82);
+    --reframe-color-cascaded-row-bg: rgba(26, 17, 16, 0.90);
+    --reframe-radius-row: 9px;
+    --reframe-radius-chip: 999px;
+    --reframe-radius-checkbox: 4px;
+
+    --reframe-color-category-text: rgb(245, 240, 236);
+    --reframe-color-category-border: rgba(214, 158, 154, 0.40);
+    --reframe-color-category-border-nested: rgba(214, 158, 154, 0.18);
+    --reframe-radius-category: 6px;
+
+    --reframe-color-toggle-checked: rgb(196, 138, 134);
+    --reframe-color-field-border: rgba(154, 137, 130, 0.45);
+
+    --reframe-color-toggle-off-bg: rgb(38, 34, 32);
+
+    --reframe-color-toggle-on-text: rgb(48, 28, 26);
+
+    --reframe-color-toggle-off-text: rgb(230, 224, 219);
+
+    --reframe-color-accent-text: rgb(240, 196, 192);
+
+    --reframe-color-panel-bg: rgba(38, 34, 32, 0.55);
+    --reframe-color-panel-border: rgba(214, 158, 154, 0.40);
+    --reframe-color-panel-text: rgb(245, 240, 236);
+    --reframe-color-button-bg: rgb(38, 34, 32);
+    --reframe-color-button-text: rgb(230, 224, 219);
+    --reframe-color-button-hover-bg: rgb(196, 138, 134);
+    --reframe-color-button-hover-text: rgb(48, 28, 26);
+
+    --reframe-color-checkbox-bg: rgb(110, 98, 94);
+    --reframe-color-checkbox-border: rgba(245, 240, 236, 0.55);
+
+    --reframe-color-checkbox-checked-bg: rgb(160, 96, 92);
+    --reframe-color-checkbox-check: rgb(255, 250, 247);
+
+    --reframe-color-root-bg: rgba(196, 138, 134, 0.16);
+    --reframe-radius-root: 8px;
+
+    --reframe-color-locked-bg: rgb(222, 186, 110);
+    --reframe-color-locked-text: rgb(40, 30, 16);
+}

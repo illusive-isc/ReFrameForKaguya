@@ -1,0 +1,20 @@
+{
+    "name": "jp.illusive_isc.ReFrameForKaguya",
+    "rootNamespace": "jp.illusive_isc.ReFrame.IKUSIA.Kaguya",
+    "references": [
+        "jp.illusive_isc.ReFrameCoreRuntime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "VRC.Dynamics.dll",
+        "VRCSDK3A.dll",
+        "VRCSDKBase.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
