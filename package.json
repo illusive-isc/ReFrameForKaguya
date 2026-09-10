@@ -2,7 +2,7 @@
 	"name": "jp.illusive-isc.reframe-kaguya",
 	"version": "0.0.3",
 	"displayName": "ReFrame for kaguya",
-	"description": "kaguya 用の ReFrame 宣言 (ReFrameCore の IKUSIA 共通基盤を継承)",
+	"description": "輝夜用のパッケージです。使わない衣装やギミックを、アバターを壊さずにビルド時だけ取り除きます。Quest 簡易対応にも対応しています。",
 	"unity": "2022.3",
 	"author": {
 		"name": "illusive_isc",
