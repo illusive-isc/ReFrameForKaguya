@@ -1,5 +1,10 @@
 # Changelog — ReFrame for kaguya
 
+## 0.0.4
+
+- パッケージの説明を分かりやすい文に書き直しました。
+- ReFrameCore 0.0.4 に合わせた更新です。
+
 ## 0.0.3
 
 - 配布先の一覧を独自ドメイン (https://reframe.illusive-isc.jp/vpm/index.json) に変更しました。

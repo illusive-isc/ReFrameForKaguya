@@ -1,6 +1,6 @@
 {
 	"name": "jp.illusive-isc.reframe-kaguya",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"displayName": "ReFrame for kaguya",
 	"description": "輝夜用のパッケージです。使わない衣装やギミックを、アバターを壊さずにビルド時だけ取り除きます。Quest 簡易対応にも対応しています。",
 	"unity": "2022.3",
@@ -9,7 +9,7 @@
 		"url": "https://illusive_isc.jp"
 	},
 	"vpmDependencies": {
-		"jp.illusive-isc.reframe-core": ">=0.0.3",
+		"jp.illusive-isc.reframe-core": ">=0.0.4",
 		"nadena.dev.ndmf": ">=1.6.0",
 		"nadena.dev.modular-avatar": ">=1.13.0",
 		"com.vrchat.avatars": ">=3.7.0",
