@@ -1,6 +1,6 @@
 {
 	"name": "jp.illusive-isc.reframe-kaguya",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"displayName": "ReFrame for kaguya",
 	"description": "kaguya 用の ReFrame 宣言 (ReFrameCore の IKUSIA 共通基盤を継承)",
 	"unity": "2022.3",
