@@ -1,6 +1,6 @@
 {
 	"name": "jp.illusive-isc.reframe-kaguya",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"displayName": "ReFrame for kaguya",
 	"description": "kaguya 用の ReFrame 宣言 (ReFrameCore の IKUSIA 共通基盤を継承)",
 	"unity": "2022.3",
@@ -9,7 +9,7 @@
 		"url": "https://illusive_isc.jp"
 	},
 	"vpmDependencies": {
-		"jp.illusive-isc.reframe-core": ">=0.0.1",
+		"jp.illusive-isc.reframe-core": ">=0.0.3",
 		"nadena.dev.ndmf": ">=1.6.0",
 		"nadena.dev.modular-avatar": ">=1.13.0",
 		"com.vrchat.avatars": ">=3.7.0",
