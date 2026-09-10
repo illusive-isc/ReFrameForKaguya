@@ -215,12 +215,14 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail Horizontal", ReFrameParameterType.Float)]
         [ReFrameBundleMember("kaguya tail Toggle")]
+        [ReFrameLinkedWith("kaguya tail Vertical")]
         [ReFrameLabel("尻尾の向き (左右)")]
         public ReFrameDeleteEntry tailHorizontal = new() { Enabled = false, Value = 0f };
 
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail Vertical", ReFrameParameterType.Float)]
         [ReFrameBundleMember("kaguya tail Toggle")]
+        [ReFrameLinkedWith("kaguya tail Horizontal")]
         [ReFrameLabel("尻尾の向き (上下)")]
         public ReFrameDeleteEntry tailVertical = new() { Enabled = false, Value = -1f };
 
