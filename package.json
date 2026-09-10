@@ -1,8 +1,8 @@
 {
 	"name": "jp.illusive-isc.reframe-kaguya",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"displayName": "ReFrame for kaguya",
-	"description": "輝夜用のパッケージです。使わない衣装やギミックを、アバターを壊さずにビルド時だけ取り除きます。Quest 簡易対応にも対応しています。",
+	"description": "輝夜用のパッケージです。消す対象 (衣装・ギミック類) 及び Quest 対応用の差分設定。",
 	"unity": "2022.3",
 	"author": {
 		"name": "illusive_isc",
