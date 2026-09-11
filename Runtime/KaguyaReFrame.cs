@@ -209,6 +209,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail variation", ReFrameParameterType.Float)]
         [ReFrameBundleMember("kaguya tail Toggle")]
+        [ReFrameZeroChoice("選択なし")] // variation1/2 を両方 OFF にした 0 が既定の見た目。OFF (ギミック削除) ではない
         [ReFrameLabel("尻尾の見た目")]
         public ReFrameDeleteEntry tailVariation = new() { Enabled = false, Value = 0f };
 
