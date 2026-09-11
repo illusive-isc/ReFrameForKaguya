@@ -9,7 +9,7 @@
 
 ## 使い方
 
-1. Hierarchy で kaguya を右クリック → **ReFrame → このアバターに ReFrame を追加**
+1. Hierarchy で kaguya を右クリック → **ILLUSORY OVERRIDE → ReFrame → このアバターに ReFrame を追加**
 2. `ReFrame` オブジェクトの Inspector で、使わない項目にチェックを入れます。チェックした項目は Scene と Hierarchy から消えて見えます。
 3. いつもどおりアップロードします。
 
