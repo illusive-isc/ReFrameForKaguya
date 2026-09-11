@@ -13,11 +13,6 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
     [ReFrameLayerRename("ear kaguya", "tail Left Hand", "ear Left Hand")]
     [ReFrameLayerRename("ear kaguya", "tail Right Hand", "ear Right Hand")]
     [ReFrameLayerRename("ear kaguya", "contact", "ear contact")]
-    [ReFrameCutCovered(
-        "Body_b",
-        Covers = new[] { "sailor", "outer", "stocking", "loafer", "beret", "bag" },
-        MaskAsset = "Packages/jp.illusive-isc.reframe-kaguya/Runtime/CoveredMasks/Body_b.txt"
-    )]
     [ReFramePhysBoneGroup("尻尾", "tail")]
     [ReFramePhysBoneGroup("後ろ髪", "Backhair", "Side_back")]
     [ReFramePhysBoneGroup("前髪", "FrontHair", "int")]
@@ -67,14 +62,37 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
 
         [ReFrameDelete("kaguya outer", ReFrameParameterType.Bool)]
         [ReFrameLabel("アウター")]
+        [ReFrameBlendShape("Body_b", "outer_shrink", Scale = 100f)]
         public ReFrameDeleteEntry outer = new() { Enabled = false, Value = 1f };
 
         [ReFrameDelete("kaguya sailor", ReFrameParameterType.Bool)]
         [ReFrameLabel("セーラー服")]
+        [ReFrameBlendShape("Body_b", "sailor_shrink", Scale = 100f)]
+        [ReFrameCutByBlendShape(
+            "Body_b",
+            "Chest2_____胸2_胸元",
+            "Spine1_____腰_上部",
+            "Spine2_____腰_へそまわり",
+            "Shoulder_____肩",
+            "UpperArm_____上腕",
+            "Elbow_____肘",
+            "LowerArm_____前腕"
+        )]
         public ReFrameDeleteEntry sailor = new() { Enabled = false, Value = 1f };
 
         [ReFrameDelete("kaguya stocking", ReFrameParameterType.Bool)]
         [ReFrameLabel("ストッキング")]
+        [ReFrameCutByBlendShape(
+            "Body_b",
+            "Hip_____腰_骨盤まわり",
+            "UpperLeg_____大腿(ふともも)",
+            "Knee_____膝",
+            "LowerLeg_____下腿(ふくらはぎ)",
+            "Ankle_____足首",
+            "Foot_____足の表(足背)",
+            "Toe_____つま先",
+            QuestOnly = true
+        )]
         public ReFrameDeleteEntry stocking = new() { Enabled = false, Value = 1f };
 
         [ReFrameDelete("kaguya loafer", ReFrameParameterType.Bool)]
