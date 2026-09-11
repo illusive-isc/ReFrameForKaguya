@@ -1,5 +1,9 @@
 # Changelog — ReFrame for kaguya
 
+## 0.0.8
+
+- ReFrameCore 0.0.7 以上が必要になりました (作者ショップの商品紹介と右クリックメニューの置き場)。
+
 ## 0.0.7
 
 - README を利用者向けの説明に書き直しました。
