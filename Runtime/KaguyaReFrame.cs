@@ -54,9 +54,10 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         Opacity = 0.7f,
         Backdrop = "#FFEAEB"
     )]
-    [ReFrameQuestCutTransparent("Body", 2)]
-    [ReFrameQuestDropMaterial("kaguya_cloth/outer", 1)]
-    [ReFrameQuestDropMaterial("kaguya_cloth/outer_breast_big_open", 1)]
+    [ReFrameQuestCutByBlendShape("Body", "照れ", "Cheek2", "Cheek3", "Cheek4", "ga-n")]
+    [ReFrameQuestTransparent("kaguya_cloth/outer", 1, Label = "油揚げの袋", Beyond = "#B0A8A7", Rim = 0.2f, Gloss = 0.35f, Size = 1024)]
+    [ReFrameQuestTransparent("kaguya_cloth/outer_breast_big_open", 1, Label = "油揚げの袋", Beyond = "#B0A8A7", Rim = 0.2f, Gloss = 0.35f, Size = 1024)]
+    [ReFrameQuestTransparent("kaguya_cloth/aburaage_open", 0, Label = "油揚げの袋 (口元)", Beyond = "#B0A8A7", Rim = 0.2f, Gloss = 0.35f, AllSides = true, Size = 1024)]
 
     public class KaguyaReFrame : IKUSIACommonReFrame
     {
@@ -86,7 +87,6 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         public ReFrameDeleteEntry bag = new() { Enabled = false, Value = 1f };
 
         [ReFrameDelete("kaguya aburaage", ReFrameParameterType.Bool)]
-        [ReFrameDeleteObject("kaguya_cloth/aburaage_open", QuestOnly = true)]
         [ReFrameLabel("油揚げ")]
         public ReFrameDeleteEntry aburaage = new() { Enabled = false, Value = 0f };
 

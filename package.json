@@ -1,6 +1,6 @@
 {
 	"name": "jp.illusive-isc.reframe-kaguya",
-	"version": "0.0.8",
+	"version": "0.1.0",
 	"displayName": "ReFrame for kaguya",
 	"description": "輝夜用のパッケージです。消す対象 (衣装・ギミック類) 及び Quest 対応用の差分設定。",
 	"unity": "2022.3",
@@ -9,7 +9,7 @@
 		"url": "https://illusive_isc.jp"
 	},
 	"vpmDependencies": {
-		"jp.illusive-isc.reframe-core": ">=0.0.7",
+		"jp.illusive-isc.reframe-core": ">=0.2.0",
 		"nadena.dev.ndmf": ">=1.6.0",
 		"nadena.dev.modular-avatar": ">=1.13.0",
 		"com.vrchat.avatars": ">=3.7.0",
