@@ -150,7 +150,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 小")]
-        [ReFrameBlendShape("Body_b", "Breast_small_____胸_小")]
+        [ReFrameBlendShape("Body_b", "Breast_small_____胸_小", SceneApply = false)]
         [ReFrameBlendShape("Bra", "Breast_small_____胸_小")]
         [ReFrameBlendShape("kaguya_cloth/outer", "Breast_small_____胸_小")]
         [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_small_____胸_小")]
@@ -164,7 +164,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (limit)")]
-        [ReFrameBlendShape("Body_b", "Breast_big(limit)")]
+        [ReFrameBlendShape("Body_b", "Breast_big(limit)", SceneApply = false)]
         public ReFrameDeleteEntry breastBigLimit = new() { Enabled = false, Value = 0f };
 
         // 胸サイズ (BreastSize、IKUSIACommonReFrame で中立 0.5 に固定) の下に並ぶ、実際の胸の形。
@@ -175,7 +175,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (mizuki)")]
-        [ReFrameBlendShape("Body_b", "Breast_Big_____胸_大(mizuki)")]
+        [ReFrameBlendShape("Body_b", "Breast_Big_____胸_大(mizuki)", SceneApply = false)]
         [ReFrameBlendShape("Bra", "Breast_Big_____胸_大")]
         [ReFrameBlendShape("kaguya_cloth/bag", "Breast_Big_____胸_大")]
         [ReFrameBlendShape("kaguya_cloth/outer", "Breast_Big_____胸_大")]
