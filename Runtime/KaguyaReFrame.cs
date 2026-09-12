@@ -27,6 +27,9 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
 
         "closet", "Gimmick", "IKUSIA_emote",
 
+        // IKUSIA_emote の中: ロコモーション (IKUSIA_Loco) を姿勢変更より上に
+        "IKUSIA_Loco", "姿勢変更",
+
         "もちまる", "FireGun", "Particle", "ペン", "コライダー", "Face", "Gesture",
 
         "tail", "ear"
