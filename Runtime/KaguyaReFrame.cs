@@ -150,10 +150,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 小")]
-        [ReFrameBlendShape("Body_b", "Breast_small_____胸_小")]
-        [ReFrameBlendShape("Bra", "Breast_small_____胸_小")]
-        [ReFrameBlendShape("kaguya_cloth/outer", "Breast_small_____胸_小")]
-        [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_small_____胸_小")]
+        [ReFrameBlendShape("*", "Breast_small_____胸_小")]
         public ReFrameDeleteEntry breastSmall = new() { Enabled = false, Value = 0f };
 
         // Body_b にはもう 1 つ "Breast_big(limit)" (トップスに収まる範囲で大きくする版) がある。kaguya 本体の
@@ -164,23 +161,19 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (limit)")]
-        [ReFrameBlendShape("Body_b", "Breast_big(limit)")]
+        [ReFrameBlendShape("*", "Breast_big(limit)")]
         public ReFrameDeleteEntry breastBigLimit = new() { Enabled = false, Value = 0f };
 
         // 胸サイズ (BreastSize、IKUSIACommonReFrame で中立 0.5 に固定) の下に並ぶ、実際の胸の形。
-        // 値は BreastSize=1 (EP 既定) のときの各メッシュの重みそのまま: Body_b だけ "(mizuki)" 付きの
-        // シェイプ、その他の衣装は無印。BreastSize の BlendTree が一緒に動かしていた髪の回転
+        // Path "*" = 同名シェイプを持つアバター内の全メッシュ (髪・純正衣装・他所の衣装・非アクティブ含む)。
+        // 値は BreastSize=1 (EP 既定) のときの重みそのまま: Body_b は "(mizuki)" 付き、純正衣装は無印の 胸_大。BreastSize の BlendTree が一緒に動かしていた髪の回転
         // (Back_side の数度) と胸 PhysBone の ON/OFF は再現しない (PhysBone は 0.5 固定で ON のまま)。
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
         [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (mizuki)")]
-        [ReFrameBlendShape("Body_b", "Breast_Big_____胸_大(mizuki)")]
-        [ReFrameBlendShape("Bra", "Breast_Big_____胸_大")]
-        [ReFrameBlendShape("kaguya_cloth/bag", "Breast_Big_____胸_大")]
-        [ReFrameBlendShape("kaguya_cloth/outer", "Breast_Big_____胸_大")]
-        [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_Big_____胸_大")]
-        [ReFrameBlendShape("kaguya_cloth/outer_breast_big_open", "Breast_Big_____胸_大")]
+        [ReFrameBlendShape("*", "Breast_Big_____胸_大(mizuki)")]
+        [ReFrameBlendShape("*", "Breast_Big_____胸_大")]
         public ReFrameDeleteEntry breastBig = new() { Enabled = false, Value = 100f };
 
         [ReFrameMenuGroup("Gimmick")]
