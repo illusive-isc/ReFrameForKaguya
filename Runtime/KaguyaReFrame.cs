@@ -421,7 +421,8 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         public ReFrameDeleteEntry afkFire = new() { Enabled = false, Value = 0f };
 
         [ReFrameLabel("ハンドアニメーション")]
-        [ReFrameMenuGroup("IKUSIA_emote", "Hand Animaton")]
+        [ReFrameMenuGroup("IKUSIA_emote")]
+        [ReFrameRowOrder(1)]
         [ReFrameValueLocked(0f)]
         [ReFrameDeleteLayer("hand_animation", 0f)]
         [ReFrameDelete("hand_animation")]
