@@ -146,6 +146,32 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameLabel("ジェスチャー差分")]
         public ReFrameDeleteEntry gestureVariation = new() { Enabled = false, Value = 0f };
 
+        // 胸サイズ (BreastSize、IKUSIACommonReFrame で中立 0.5 に固定) の下に並ぶ、実際の胸の形。
+        // 値は BreastSize=1 (EP 既定) のときの各メッシュの重みそのまま: Body_b だけ "(mizuki)" 付きの
+        // シェイプ、その他の衣装は無印。BreastSize の BlendTree が一緒に動かしていた髪の回転
+        // (Back_side の数度) と胸 PhysBone の ON/OFF は再現しない (PhysBone は 0.5 固定で ON のまま)。
+        [ReFrameMenuGroup("Gimmick")]
+        [ReFrameApplyToAvatar]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameLabel("胸: 大")]
+        [ReFrameBlendShape("Body_b", "Breast_Big_____胸_大(mizuki)")]
+        [ReFrameBlendShape("Bra", "Breast_Big_____胸_大")]
+        [ReFrameBlendShape("kaguya_cloth/bag", "Breast_Big_____胸_大")]
+        [ReFrameBlendShape("kaguya_cloth/outer", "Breast_Big_____胸_大")]
+        [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_Big_____胸_大")]
+        [ReFrameBlendShape("kaguya_cloth/outer_breast_big_open", "Breast_Big_____胸_大")]
+        public ReFrameDeleteEntry breastBig = new() { Enabled = false, Value = 100f };
+
+        [ReFrameMenuGroup("Gimmick")]
+        [ReFrameApplyToAvatar]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameLabel("胸: 小")]
+        [ReFrameBlendShape("Body_b", "Breast_small_____胸_小")]
+        [ReFrameBlendShape("Bra", "Breast_small_____胸_小")]
+        [ReFrameBlendShape("kaguya_cloth/outer", "Breast_small_____胸_小")]
+        [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_small_____胸_小")]
+        public ReFrameDeleteEntry breastSmall = new() { Enabled = false, Value = 0f };
+
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
         [ReFrameLabel("足: ヒールオフ")]
@@ -197,8 +223,40 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameDeleteLayer("mochimaru gimmick", 0f)]
         [ReFrameDeleteLayer("mochimaru animation", 0f)]
         [ReFrameDeleteObject("Advanced/mochimaru", 0f)]
-        [ReFrameLabel("もちまる")]
+        [ReFrameLabel("もちまる ON/OFF")]
         public ReFrameDeleteEntry mochimaruOn = new() { Enabled = false, Value = 0f };
+
+        // ペットを消さずに位置を固定する行。Value 1 = 頭上固定、0 = 地上 (歩き回りだけ)。
+        // 頭上固定 (1): Position Head を ON 固定にすると、条件が全部成立する「→ Head jump / → Headposition」
+        //   の遷移は (条件なし遷移として) 消えるので、入口のハブ (Random position / stand) ごと頭上の枝の
+        //   先頭へ繋ぎ変える (OnlyWhenValue = 1)。歩き回り・ジャンプ・飛行・落下はそこからしか行けなく
+        //   なり、到達不能として掃除される。下の道連れ行も一緒に消える。
+        // 地上 (0): Position Head を OFF 固定。頭上の枝 (Head jump / Headposition) が到達不能になって消え、
+        //   歩き回り側はそのまま。
+        // [ReFrameReverse]: この行の「ギミック (歩き回り) が OFF に見える生の値」は 1。これで頭上固定 (1) の
+        //   ときだけ、道連れ行 ([ReFrameBundleMember]) が「代表の実効値 == OFF 値」の条件で一緒に消える。
+        // 「もちまる ON/OFF」(全削除) と同時に ON にした場合はレイヤーごと消えるので、こちらは何もしない。
+        [ReFrameMenuGroup("Gimmick", "もちまる")]
+        [ReFrameDelete("mochimaru Position Head", ReFrameParameterType.Bool)]
+        [ReFrameReverse]
+        [ReFrameValueLabels("地上", "頭上固定")]
+        [ReFrameRedirectState("mochimaru gimmick", "mochimaru Random position", "mochimaru position Head jump", 1f)]
+        [ReFrameRedirectState("mochimaru animation", "mochimaru stand", "mochimaru pose Headposition", 1f)]
+        [ReFrameLabel("もちまる 位置")]
+        public ReFrameDeleteEntry mochimaruHeadFixed = new() { Enabled = false, Value = 1f };
+
+        // 頭上固定で読み手が無くなる (歩き回り・飛行・位置指定の) パラメーター。残すと同期ビットと
+        // メニュー項目が死んだまま残るので、代表 (Position Head 固定) に道連れで 0 固定にして落とす。
+        [ReFrameMenuGroup("Gimmick", "もちまる")]
+        [ReFrameDelete("mochimaru random move", ReFrameParameterType.Float)]
+        [ReFrameDelete("mochimaru random animation", ReFrameParameterType.Float)]
+        [ReFrameDelete("mochimaru FLY", ReFrameParameterType.Float)]
+        [ReFrameDelete("mochimaru position X", ReFrameParameterType.Float)]
+        [ReFrameDelete("mochimaru position Y", ReFrameParameterType.Float)]
+        [ReFrameBundleMember("mochimaru Position Head")]
+        [ReFrameValueLocked]
+        [ReFrameLabel("頭上固定で使わなくなる項目")]
+        public ReFrameDeleteEntry mochimaruHeadFixedLeftovers = new() { Enabled = false, Value = 0f };
 
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail Toggle", ReFrameParameterType.Bool)]
@@ -219,11 +277,14 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameLabel("尻尾の揺れ方")]
         public ReFrameDeleteEntry tailPbVariation = new() { Enabled = false, Value = 0f };
 
+        // 本数は 1D BlendTree の閾値 0.1〜0.9 が 1〜9 本にそのまま対応する (途中の値は 2 本分の混ざり)。
+        // RadialPuppet なのでメニューに候補が無く、スライダーだと閾値ぴったりに合わせにくいので候補で選ぶ。
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail Count", ReFrameParameterType.Float)]
         [ReFrameBundleMember("kaguya tail Toggle")]
+        [ReFrameValueChoices("1本=0.1", "2本=0.2", "3本=0.3", "4本=0.4", "5本=0.5", "6本=0.6", "7本=0.7", "8本=0.8", "9本=0.9")]
         [ReFrameLabel("尻尾の本数")]
-        public ReFrameDeleteEntry tailCount = new() { Enabled = false, Value = 1f };
+        public ReFrameDeleteEntry tailCount = new() { Enabled = false, Value = 0.9f };
 
         [ReFrameMenuGroup("closet", "tail")]
         [ReFrameDelete("kaguya tail scale", ReFrameParameterType.Float)]
