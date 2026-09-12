@@ -172,6 +172,17 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameBlendShape("kaguya_cloth/sailor", "Breast_small_____胸_小")]
         public ReFrameDeleteEntry breastSmall = new() { Enabled = false, Value = 0f };
 
+        // Body_b にはもう 1 つ "Breast_big(limit)" (トップスに収まる範囲で大きくする版) がある。kaguya 本体の
+        // アニメーションはこれを動かさないが、他所の衣装 (例: fumitikishop の blue) は MA BlendshapeSync で
+        // Body_b の (limit) と 胸_小 を自分の同名シェイプへ写しているので、そうした衣装を着るときはこちらを使う
+        // ((mizuki) の方は衣装側に無いので追従しない)。衣装側への反映は BlendshapeSync 任せ。
+        [ReFrameMenuGroup("Gimmick")]
+        [ReFrameApplyToAvatar]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameLabel("胸: 大 (limit・他所の衣装向け)")]
+        [ReFrameBlendShape("Body_b", "Breast_big(limit)")]
+        public ReFrameDeleteEntry breastBigLimit = new() { Enabled = false, Value = 0f };
+
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
         [ReFrameLabel("足: ヒールオフ")]
