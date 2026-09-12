@@ -148,7 +148,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
 
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
-        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 小")]
         [ReFrameBlendShape("Body_b", "Breast_small_____胸_小")]
         [ReFrameBlendShape("Bra", "Breast_small_____胸_小")]
@@ -162,7 +162,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         // ((mizuki) の方は衣装側に無いので追従しない)。衣装側への反映は BlendshapeSync 任せ。
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
-        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (limit)")]
         [ReFrameBlendShape("Body_b", "Breast_big(limit)")]
         public ReFrameDeleteEntry breastBigLimit = new() { Enabled = false, Value = 0f };
@@ -173,7 +173,7 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         // (Back_side の数度) と胸 PhysBone の ON/OFF は再現しない (PhysBone は 0.5 固定で ON のまま)。
         [ReFrameMenuGroup("Gimmick")]
         [ReFrameApplyToAvatar]
-        [ReFrameBundleMember("BreastSize", ValueMatters = true)]
+        [ReFrameBundleMember("BreastSize", ValueMatters = true, Always = true)]
         [ReFrameLabel("胸: 大 (mizuki)")]
         [ReFrameBlendShape("Body_b", "Breast_Big_____胸_大(mizuki)")]
         [ReFrameBlendShape("Bra", "Breast_Big_____胸_大")]
