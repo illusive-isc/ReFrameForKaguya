@@ -66,6 +66,8 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
         [ReFrameDelete("kaguya outer", ReFrameParameterType.Bool)]
         [ReFrameLabel("アウター")]
         [ReFrameBlendShape("Body_b", "outer_shrink", Scale = 100f)]
+        // 髪の Outer_on はアウターと同じクリップで動くが、アウターを消したあとも髪側で決めたいので切り離す (値は Hair のスライダー)
+        [ReFrameDetachBlendShape("Hair", "Outer_on")]
         public ReFrameDeleteEntry outer = new() { Enabled = false, Value = 1f };
 
         [ReFrameDelete("kaguya sailor", ReFrameParameterType.Bool)]
