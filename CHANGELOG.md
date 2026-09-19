@@ -1,5 +1,9 @@
 # Changelog — ReFrame for kaguya
 
+## 0.5.0
+
+- ReFrameCore 0.6.0 以上が必要になりました。ReFrameCore 側の更新を取り込みます: 「焼き込み」(Inspector 最下部のボタンでその場で削除を適用し、FX / メニュー / パラメーターの実体を `Assets/ReFrameBaked/` に書き出してアバターを張り替え、ReFrame を外す。ビルド時は掃除だけが動く) と、メニューの掃除・畳みを ReFrame が消した分に限る修正 (アバターのメニューへ直接足したサブメニューが消えなくなります)。
+
 ## 0.4.1
 
 - 髪の `Outer_on` (アウター着用時の髪の形) をアウターの着脱から切り離しました。アウターを消しても髪の Inspector のスライダーで決められます (ReFrameCore 0.5.2 以上)。
