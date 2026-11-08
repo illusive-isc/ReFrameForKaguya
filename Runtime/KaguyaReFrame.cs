@@ -256,6 +256,12 @@ namespace jp.illusive_isc.ReFrame.IKUSIA.Kaguya
 
         // 頭上固定で読み手が無くなる (歩き回り・飛行・位置指定の) パラメーター。残すと同期ビットと
         // メニュー項目が死んだまま残るので、代表 (Position Head 固定) に道連れで 0 固定にして落とす。
+        // [ReFrameNoBake]: 0 固定の枝 (歩き回りの「立つ」ポーズ mochimaru pose tree stand) を焼き付けない。
+        //   頭上固定では stand へは二度と入らないのに、焼くと立つポーズの値がもちまるの「元の値」になり、
+        //   WD ON の頭上の状態 (Headposition) が書かない値まで変わる。特に tail_rotation の Parent Constraint の
+        //   m_Enabled = 1 が焼かれて、頭の上でも尻尾が前へ回って顔を覆い、後ろを向いて見えた
+        //   (2026-11-08 kaguya (9) の実機報告。元の輝夜で Position Head を入れたときは WD がシーンの値 = 無効に戻す)。
+        [ReFrameNoBake]
         [ReFrameMenuGroup("Gimmick", "もちまる")]
         [ReFrameDelete("mochimaru random move", ReFrameParameterType.Float)]
         [ReFrameDelete("mochimaru random animation", ReFrameParameterType.Float)]
